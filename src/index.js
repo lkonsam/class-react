@@ -7,6 +7,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import About from "./pages/About";
 import Login from "./pages/Login";
 import Home from "./pages/Home";
+import User from "./pages/User";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -16,16 +17,34 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       {
-        path: "hero/yahoo",
+        index: true, // Same as path: ""
+        element: <Home />,
+      },
+      {
+        path: "about",
         element: <About />,
       },
       {
         path: "login",
         element: <Login />,
       },
+    ],
+  },
+  {
+    path: "/user",
+    element: <User />, // should include <Outlet /> inside User component
+    children: [
       {
-        path: "/",
+        index: true, // default under /user
         element: <Home />,
+      },
+      {
+        path: "all",
+        element: <About />,
+      },
+      {
+        path: "new",
+        element: <Login />,
       },
     ],
   },
