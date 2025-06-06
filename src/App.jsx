@@ -13,7 +13,7 @@ export default function App() {
       <header>
         <Header />
       </header>
-
+      <h2>Default Group is RED</h2>
       <main
         style={{
           color: "RED",
